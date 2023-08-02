@@ -2,21 +2,37 @@ package model;
 
 public enum Genre {
 	
-	PLATFORM, 
-	SPORTS, 
-	RACING, 
-	SHOOTER, 
-	MISC, 
-	ACTION, 
-	ROLEPLAYING, 
-	PUZZLE,
-	FIGHTING,
-	STRATEGY,
-	ADVENTURE,
-	SIMULATION;
+	//ES MUY MUY POSIBLE QUE FALTEN GENEROS
 	
-	Genre(){
-		
+	PLATFORM("PLATFORM"), 
+	SPORTS("SPORTS"), 
+	RACING("RACING"), 
+	SHOOTER("SHOOTER"), 
+	MISC("MISC"), 
+	ACTION("ACTION"), 
+	ROLEPLAYING("ROLEPLAYING"), 
+	PUZZLE("PUZZLE"),
+	FIGHTING("FIGHTING"),
+	STRATEGY("STRATEGY"),
+	ADVENTURE("ADVENTURE"),
+	SIMULATION("SIMULATION"),
+	DONT_EXIST("DONT_EXIST");
+	
+	String string;
+
+	private Genre(String string) {
+		this.string = string;
 	}
+
+	public String getString() {
+		return string;
+	}
+
+	public void setString(String string) {
+		this.string = string;
+	}
+	
+	
+	
 	
 }

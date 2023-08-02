@@ -10,32 +10,46 @@ public enum Platform {
 	 * 
 	 */
 	
-	PS,
-	DS,
-	WII,
-	X360,
-	XB,
-	PC,
-	PSV,
-	_3DS,
-	_2600,
-	N64,
-	PS2,
-	PSP,
-	PS3,
-	SAT,
-	GB,
-	GBA,
-	SNES,
-	NES,
-	DC,
-	PS4,
-	XONE,
-	WIIU,
-	_TG16;
+	PS("PS"),
+	DS("DS"),
+	WII("WII"),
+	X360("X360"),
+	XB("XB"),
+	PC("PC"),
+	PSV("PSV"),
+	_3DS("3DS"),
+	_2600("2600"),
+	N64("N64"),
+	PS2("PS2"),
+	PSP("PSP"),
+	PS3("PS3"),
+	SAT("SAT"),
+	GB("GB"),
+	GBA("GBA"),
+	SNES("SNES"),
+	NES("NES"),
+	DC("DC"),
+	PS4("PS4"),
+	XONE("XONE"),
+	WIIU("WIIU"),
+	_TG16("TG16"),
+	DONT_EXIST("DONT_EXIST");
 	
-	Platform(){
-		
+	String string;
+	
+	
+	private Platform(String string) {
+		this.string = string;
+	}
+
+
+	public String getString() {
+		return string;
+	}
+
+
+	public void setString(String string) {
+		this.string = string;
 	}
 	
 	
