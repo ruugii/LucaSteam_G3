@@ -5,8 +5,14 @@ import java.util.ArrayList;
 public class ListGame <T>{
 	
 	private ArrayList<T> listGames;
-	
-	public  listGames{
+
+	/** FUNCTION TO ADD AN OBJECT GAME TO THE ARRAYLIST WHICH CONTAINS ALL AVAILABLE GAMES
+	 * 
+	 * @param <T> 
+	 * @param Game Object containing game's information
+	 */
+
+	public ListGame() {
 		listGames = new ArrayList<>();
 	}
 
@@ -15,10 +21,10 @@ public class ListGame <T>{
 	 * @param <T> 
 	 * @param Game Object containing game's information
 	 */
-	public static <T> void addGame(T Game) {
-		listGame.add(Game);
+	public void addGame(T Game) {
+		this.listGames.add(Game);
 	}
-
+	
 	public ArrayList<T> getListGames() {
 		return listGames;
 	}
