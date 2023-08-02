@@ -29,7 +29,6 @@ public class DocumentRead {
 
     public static void SaveData(String path, ArrayList<String> toWrite) {
         Path path1 = Paths.get(path);
-        toWrite.add("Test num 1 in write method");
         try {
             BufferedWriter bw = Files.newBufferedWriter(path1, StandardCharsets.UTF_8, StandardOpenOption.CREATE);
             for (int i = 0; i < toWrite.size(); i++) {

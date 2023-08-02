@@ -24,13 +24,10 @@ public enum Genre {
 		this.string = string;
 	}
 
-	public String getString() {
+	public String getName() {
 		return string;
 	}
 
-	public void setString(String string) {
-		this.string = string;
-	}
 	
 	
 	

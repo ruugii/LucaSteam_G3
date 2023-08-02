@@ -9,14 +9,41 @@ import java.util.ArrayList;
 
 public class GameService {
     public static void InicialData(ArrayList<String> option) {
-        for (String line: option){
-            String[] aux = line.split(",");
-            System.out.println(line);
-            createGame(aux[1], aux[2], Integer.parseInt(aux[3]), aux[4], aux[5]);
+        ListGame LG = new ListGame<>();
+        for (String line : option) {
+            String[] hasComilllas = line.split("\"");
+            String[] separateComa = line.split(",");
+            try {
+                if (!separateComa[1].contains("\"")){
+                    String[] aux = line.split(",");
+                    System.out.println(line);
+                    if (aux[3].equalsIgnoreCase("N/A")) {
+                        LG.addGame(line);
+                    } else {
+                        LG.addGame(createGame(aux[1], aux[2], Integer.parseInt(aux[3]), aux[4], aux[5]));
+                    }
+                    System.out.println(LG.toString());
+                } else {
+                    String[] aux = hasComilllas[2].split(",");
+                    if (aux[2].equalsIgnoreCase("N/A")){
+                        LG.addGame(line);
+                    } else {
+                        System.out.println(aux[3]);
+                        System.out.println(aux[4]);
+                        LG.addGame(createGame(
+                                hasComilllas[1],
+                                aux[1], Integer.parseInt(aux[2]), aux[3], aux[4]
+                        ));
+                    }
+                }
+            } catch (Error e){
+                LG.addGame(line);
+            }
+
         }
     }
 
-    public static void createGame(String a, String platformName, int c, String GenreName, String e){
+    public static Game createGame(String a, String platformName, int c, String GenreName, String e){
         Platform[] ArP = {
                 Platform.PS,
                 Platform.DS,
@@ -60,18 +87,20 @@ public class GameService {
         Platform b = Platform.DONT_EXIST;
         Genre d = Genre.DONT_EXIST;
         for (int i = 0; i < ArP.length; i++) {
-            if (platformName.equalsIgnoreCase(ArP.getName())){
+            Platform aux = ArP[i];
+            if (platformName.equalsIgnoreCase(aux.getName())){
                 b = ArP[i];
             }
         }
 
         for (int i = 0; i < GeP.length; i++) {
-            if (platformName.equalsIgnoreCase(GeP.getName())){
+            Genre aux = GeP[i];
+            if (platformName.equalsIgnoreCase(aux.getName())){
                 d = GeP[i];
             }
         }
 
 
-        new Game(a, b, c, d, new Publisher(e));
+        return new Game(a, b, c, d, new Publisher(e));
     }
 }

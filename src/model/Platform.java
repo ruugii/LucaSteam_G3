@@ -43,7 +43,7 @@ public enum Platform {
 	}
 
 
-	public String getString() {
+	public String getName() {
 		return string;
 	}
 
