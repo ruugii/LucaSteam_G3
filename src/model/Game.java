@@ -1,7 +1,6 @@
 package model;
 
 public class Game {
-    /*
     private static int count = 0;
     private int id;
     private String name;
@@ -75,5 +74,4 @@ public class Game {
                 ", pub=" + pub +
                 '}';
     }
-    */
 }
