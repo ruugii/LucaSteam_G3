@@ -1,7 +1,9 @@
 package com.LucaSteam;
 
+import utilities.DocumentRead;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        DocumentRead.read("src/resources/files/data.csv");
     }
 }
