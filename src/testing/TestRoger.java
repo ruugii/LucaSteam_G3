@@ -7,18 +7,16 @@ import model.Game;
 import model.Publisher;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
-import services.GameService;
 import utilities.DocumentRead;
 
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class part1Test {
+public class TestRoger {
     private final ListGame lg = new ListGame();
 
-   /* @Test
+	@Test
     void lengthData () {
         ArrayList<String> iData = DocumentRead.InicialData("src/resources/files/data.csv");
         assertEquals(iData.size(), 16598);
@@ -43,7 +41,7 @@ public class part1Test {
         DocumentRead.SaveData("src/resources/files/data.csv", iData);
         iData = DocumentRead.InicialData("src/resources/files/data.csv");
         assertEquals(testText, iData.get(iData.size() - 1));
-    }*/
+    }
     
     @Test
     void addGame2() {
