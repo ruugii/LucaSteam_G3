@@ -9,21 +9,13 @@ import utilities.ReadData;
 public class CreateObjectGame {
 	
 	Game game = null;
- 
-    public Game createObjectGame(String name, Platform platform, int year, Genre gen, Publisher pub) {
-    	try {
+
+    public Game createGame(String name, Platform platform, int year, Genre gen, Publisher pub) {
     	Game game = new Game(name, platform, year, gen, pub);
-    	}
-    	catch(Exception e) {
-    		e.printStackTrace();
-    		System.out.println("\n\n\n\n no se han introducido valores correctos en createObject");
-    		
-    	}
-    	return game;
+		return game;
 	}
 
 	public static Game createGame(String a, String platformName, int c, String GenreName, String e){
-		Genre [] GeP = { Genre.PLATFORM, Genre.SPORTS, Genre.RACING, Genre.SHOOTER, Genre.MISC, Genre.ACTION, Genre.ROLEPLAYING, Genre.PUZZLE, Genre.FIGHTING, Genre.STRATEGY, Genre.ADVENTURE, Genre.SIMULATION};
 		Platform[] ArP = {
 				Platform.PS,
 				Platform.DS,
@@ -50,6 +42,20 @@ public class CreateObjectGame {
 				Platform._TG16
 		};
 
+		Genre [] GeP = {
+				Genre.PLATFORM,
+				Genre.SPORTS,
+				Genre.RACING,
+				Genre.SHOOTER,
+				Genre.MISC,
+				Genre.ACTION,
+				Genre.ROLEPLAYING,
+				Genre.PUZZLE,
+				Genre.FIGHTING,
+				Genre.STRATEGY,
+				Genre.ADVENTURE,
+				Genre.SIMULATION
+		};
 		Platform b = Platform.DONT_EXIST;
 		Genre d = Genre.DONT_EXIST;
 		for (int i = 0; i < ArP.length; i++) {
@@ -66,9 +72,9 @@ public class CreateObjectGame {
 			}
 		}
 
+
 		return new Game(a, b, c, d, new Publisher(e));
 	}
-
 	public static Genre elegirGenero() {
 		Genre [] GeP = { Genre.PLATFORM, Genre.SPORTS, Genre.RACING, Genre.SHOOTER, Genre.MISC, Genre.ACTION, Genre.ROLEPLAYING, Genre.PUZZLE, Genre.FIGHTING, Genre.STRATEGY, Genre.ADVENTURE, Genre.SIMULATION};
 		String menu = "Escribe el genero que prefieras: ";
