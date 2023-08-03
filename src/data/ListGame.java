@@ -36,8 +36,8 @@ public class ListGame <T>{
 	public boolean alreadyExist(Game g) {
 		for (int i = 0;i< this.listGames.size();i++) {
 			if(g.getName() == this.listGames.get(i)) return true;
-			else return false;
 		}
+		return false;
 	}
 	
 	public ArrayList<T> getListGames() {
