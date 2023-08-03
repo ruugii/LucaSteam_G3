@@ -95,7 +95,7 @@ public class GameService {
 
         for (int i = 0; i < GeP.length; i++) {
             Genre aux = GeP[i];
-            if (platformName.equalsIgnoreCase(aux.getName())){
+            if (GenreName.equalsIgnoreCase(aux.getName())){
                 d = GeP[i];
             }
         }
