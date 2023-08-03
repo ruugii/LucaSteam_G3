@@ -35,6 +35,34 @@ public class ReadData {
         return number;
 
     }
+    
+    public static int readInt() {
+
+        boolean error = true;
+
+        int number = 0;
+
+        do {
+
+            
+
+            error = input.hasNextInt();
+
+            if (error) {
+
+                number = input.nextInt();
+
+            } else {
+
+                System.out.println("Error, introduce un número entero");
+
+            }
+
+        } while (!error);
+
+        return number;
+
+    }
 
  
 
@@ -185,12 +213,36 @@ public class ReadData {
         return aux;
 
     }
+    
+    public static String readString() {
+
+        
+
+        String aux = input.nextLine();
+
+        System.out.println(aux);
+
+        return aux;
+
+    }
 
  
 
     public static String readWord(String message) {
 
         System.out.println(message);
+
+        String aux = input.next();
+
+        input.nextLine();
+
+        return aux;
+
+    }
+    
+    public static String readWord() {
+
+        
 
         String aux = input.next();
 
