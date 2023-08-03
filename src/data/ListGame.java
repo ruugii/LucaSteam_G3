@@ -1,4 +1,6 @@
 package data;
+import model.Game;
+
 import java.util.List;
 import java.util.ArrayList;
 import model.Game;
@@ -33,9 +35,7 @@ public class ListGame <T>{
 	 */
 	public boolean alreadyExist(Game g) {
 		for (int i = 0;i< this.listGames.size();i++) {
-			if (g.getName() == this.listGames.get(i)) {
-				return true;
-			}
+			if(g.getName() == this.listGames.get(i)) return true;
 		}
 		return false;
 	}
@@ -45,6 +45,18 @@ public class ListGame <T>{
 	}
 	public void setListGames(ArrayList<T> listGames) {
 		this.listGames = listGames;
+	}
+
+	public ArrayList<Game> getGames(){
+		ArrayList<Game> aux = new ArrayList<>();
+		for (int i = 0; i < listGames.size(); i++) {
+			if (listGames.get(i).getClass() == new Game().getClass()){
+				aux.add((Game) listGames.get(i));
+			} else {
+				System.out.println(listGames.get(i));
+			}
+		}
+		return aux;
 	}
 
 	@Override

@@ -37,8 +37,30 @@ public class DocumentRead {
             }
             bw.flush();
             bw.close();
+            System.out.println("Terminado de guardar");
         } catch (IOException io) {
             System.err.println(io);
+        }
+    }
+
+    public static void SaveDataTest(String path, ArrayList<String> toWrite) {
+        Path path1 = Paths.get(path);
+        try {
+            BufferedWriter bw = Files.newBufferedWriter(path1, StandardCharsets.UTF_8, StandardOpenOption.CREATE);
+            for (int i = 0; i < toWrite.size(); i++) {
+                if (toWrite.get(i).contains(",")){
+                    bw.write(toWrite.get(i));
+                    bw.newLine();
+                } else {
+                    bw.write("");
+                    bw.newLine();
+                }
+            }
+            bw.flush();
+            bw.close();
+            System.out.println("Terminado de guardar");
+        } catch (IOException io) {
+            System.err.println("I/O" + io);
         }
     }
 }

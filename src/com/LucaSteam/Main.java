@@ -1,10 +1,11 @@
 package com.LucaSteam;
 
+import controller.LucaSteam_G3;
 import services.GameService;
 import utilities.DocumentRead;
 
 public class Main {
     public static void main(String[] args) {
-        GameService.InicialData(DocumentRead.InicialData("src/resources/files/data.csv"));
+        LucaSteam_G3.init();
     }
 }
