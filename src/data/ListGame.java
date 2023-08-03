@@ -1,6 +1,7 @@
 package data;
 import java.util.List;
 import java.util.ArrayList;
+import model.Game;
 
 public class ListGame <T>{
 	
@@ -23,6 +24,18 @@ public class ListGame <T>{
 	 */
 	public void addGame(T Game) {
 		this.listGames.add(Game);
+	}
+	
+	/** FUNCTION TO CHECK WHETHER A GAME IS ALREADY INCLUDED IN THE LIST
+	 * 
+	 * @param g Game to check against the existing list
+	 * @return
+	 */
+	public boolean alreadyExist(Game g) {
+		for (int i = 0;i< this.listGames.size();i++) {
+			if(g.getName() == this.listGames.get(i)) return true;
+			else return false;
+		}
 	}
 	
 	public ArrayList<T> getListGames() {
