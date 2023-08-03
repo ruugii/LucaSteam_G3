@@ -9,7 +9,6 @@ import utilities.DocumentRead;
 public class LucaSteam_G3 {
     public static void init(){
         GameService.InicialData(DocumentRead.InicialData("src/resources/files/data.csv"));
-
         Menu.showMenu();
     }
 

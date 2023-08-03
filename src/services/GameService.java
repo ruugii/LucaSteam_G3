@@ -4,6 +4,8 @@ import model.Game;
 import model.Genre;
 import model.Platform;
 import model.Publisher;
+import utilities.DocumentRead;
+import utilities.ReadData;
 
 import java.util.ArrayList;
 
@@ -26,12 +28,12 @@ public class GameService {
                     String[] aux = hasComilllas[2].split(",");
                     if (aux[2].equalsIgnoreCase("N/A")){
                         lg.addGame(CreateObjectGame.createGame(
-                                hasComilllas[1],
+                                "\"" + hasComilllas[1] + "\"",
                                 aux[1], 0, aux[3], aux[4]
                         ));
                     } else {
                         lg.addGame(CreateObjectGame.createGame(
-                                hasComilllas[1],
+                                "\"" + hasComilllas[1] + "\"",
                                 aux[1], Integer.parseInt(aux[2]), aux[3], aux[4]
                         ));
                     }
@@ -45,5 +47,18 @@ public class GameService {
 
     public static ArrayList<Game> showGameList(){
         return lg.getGames();
+    }
+
+    public static ArrayList<String> getDocumentFormat() {
+        ArrayList<Game> games = lg.getGames();
+        ArrayList<String> write = new ArrayList<>();
+        for (int i = 0; i < games.size(); i++) {
+            write.add(games.get(i).getDocumentFormat());
+        }
+        return write;
+    }
+
+    public static void add(Game g){
+        lg.addGame(g);
     }
 }

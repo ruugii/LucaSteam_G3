@@ -10,7 +10,7 @@ public class CreateObjectGame {
 	
 	Game game = null;
 
-    public Game createGame(String name, Platform platform, int year, Genre gen, Publisher pub) {
+	public static Game createGame(String name, Platform platform, int year, Genre gen, Publisher pub) {
     	Game game = new Game(name, platform, year, gen, pub);
 		return game;
 	}

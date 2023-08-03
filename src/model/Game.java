@@ -95,4 +95,8 @@ public class Game {
                 "\n\tpub:" + pub +
                 "\n}";
     }
+
+    public String getDocumentFormat() {
+        return id + ","+name+","+platform.getName()+","+year+","+gen.getName()+","+pub;
+    }
 }

@@ -1,10 +1,12 @@
 package gui;
 
+import data.GameDAO;
 import data.ListGame;
 import model.Genre;
 import model.Platform;
 import services.CreateObjectGame;
 import services.GameService;
+import utilities.DocumentRead;
 import utilities.ReadData;
 
 public class Menu {
@@ -26,7 +28,7 @@ public class Menu {
 			button = ReadData.readInt(menu, 1, option.length);
 			switch (button) {
 				case 1:
-					System.out.println("WE ARE WORKING ON IT");
+					GameService.add(GameDAO.createNewGame());
 					break;
 				case 2:
 					FilterShowGameList.showList(GameService.showGameList());
@@ -47,6 +49,7 @@ public class Menu {
 					}
 			}
 		} while (button != option.length);
+		DocumentRead.SaveData("src/resources/files/data.csv", GameService.getDocumentFormat());
 	}
 
 	/**

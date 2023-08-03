@@ -3,12 +3,14 @@ package data;
 import model.Game;
 import model.Genre;
 import model.Platform;
+import model.Publisher;
+import services.CreateObjectGame;
 import services.GameService;
 import utilities.ReadData;
 
 public class GameDAO {
 	
-	public Game createNewGame() {
+	public static Game createNewGame() {
 		
 		final String pl, ge;
 		
@@ -42,7 +44,7 @@ public class GameDAO {
 		for (int i = 0; i < ArP.length; i++) {
 		    menu += (i + 1) + ".- " + ArP[i].getName()+"\n\t";
 		}
-		int x = ReadData.readInt();
+		int x = ReadData.readInt(menu);
 		pl = ArP[x-1].getName();
 		
         Genre [] GeP = {
@@ -60,15 +62,15 @@ public class GameDAO {
                 Genre.SIMULATION
         };
         
-		String menu2 = "Selecciona la consola: \n";
+		String menu2 = "Selecciona el genero: \n";
 		for (int j = 0; j < GeP.length; j++) {
-		    menu2 += (j + 1) + ".- " + ArP[j].getName()+"\n\t";
+		    menu2 += (j + 1) + ".- " + GeP[j].getName()+"\n\t";
 		}
 		
-		int y = ReadData.readInt();
+		int y = ReadData.readInt(menu2);
 		ge = GeP[y-1].getName();
-		
-		return GameService.createGame(ReadData.readString("Introduce el nombre:"), pl, ReadData.readInt("Introduce el año:"), ge, ReadData.readString("Introduce el publisher:") );
+
+		return CreateObjectGame.createGame(ReadData.readString("Introduce el nombre:"), pl, ReadData.readInt("Introduce el año:"), ge, ReadData.readString("Introduce el publisher:"));
 
 
 	}
