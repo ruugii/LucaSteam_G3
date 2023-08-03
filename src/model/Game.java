@@ -9,6 +9,9 @@ public class Game {
     private Genre gen;
     private Publisher pub;
 
+    public Game(){
+
+    }
     public Game(String name, Platform platform, int year, Genre gen, Publisher pub) {
         this.count++;
         id = this.count;
@@ -84,12 +87,12 @@ public class Game {
 
     @Override
     public String toString() {
-        return "Game " + id + "{" +
-                ", name='" + name + '\'' +
-                ", platform=" + platform +
-                ", year=" + year +
-                ", gen=" + gen +
-                ", pub=" + pub +
-                '}';
+        return "Game " + id + " {\n\t" +
+                "name: " + name + "\n\t" +
+                "platform: " + platform +
+                "\n\tyear:" + year +
+                "\n\tgen:" + gen +
+                "\n\tpub:" + pub +
+                "\n}";
     }
 }
