@@ -19,6 +19,24 @@ public class Game {
         this.pub = pub;
     }
 
+    public String getValue() {
+
+        return "Game " + "{" +
+
+                "name='" + name + '\'' +
+
+                ", platform=" + platform +
+
+                ", year=" + year +
+
+                ", gen=" + gen +
+
+                ", pub=" + pub +
+
+                '}';
+
+    }
+    
     public int getId() {
         return id;
     }
