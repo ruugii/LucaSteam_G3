@@ -95,4 +95,47 @@ public class CreateObjectGame {
 		return GeP[btn - 1];
 	}
 
+	public static Platform elegirPlatform() {
+		Platform[] ArP = {
+				Platform.PS,
+				Platform.GEN,
+				Platform.DS,
+				Platform.WII,
+				Platform.X360,
+				Platform.XB,
+				Platform.PC,
+				Platform.PSV,
+				Platform.SCD,
+				Platform._3DS,
+				Platform._3DO,
+				Platform._2600,
+				Platform.N64,
+				Platform.PS2,
+				Platform.PSP,
+				Platform.PS3,
+				Platform.SAT,
+				Platform.GB,
+				Platform.GG,
+				Platform.GBA,
+				Platform.SNES,
+				Platform.NES,
+				Platform.DC,
+				Platform.PS4,
+				Platform.XONE,
+				Platform.WIIU,
+				Platform.WS,
+				Platform.NG,
+				Platform.PCFX,
+				Platform._TG16,
+				Platform.GC,
+				Platform.DONT_EXIST
+		};
+		String menu = "Escribe la plataforma que prefieras: ";
+		for (int i = 0; i < ArP.length; i++) {
+			menu += (i + 1) + ".- " + ArP[i].getName() + "\n\t";
+		}
+
+		int btn = ReadData.readInt(menu, 1, ArP.length);
+		return ArP[btn - 1];
+	}
 }
