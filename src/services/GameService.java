@@ -1,8 +1,11 @@
 package services;
 import data.ListGame;
+
 import model.Platform;
+
 import model.Game;
 import model.Genre;
+import model.Publisher;
 
 import java.util.ArrayList;
 
@@ -35,11 +38,13 @@ public class GameService {
                                     aux[1], Integer.parseInt(aux[2]), aux[3], aux[4]
                             ));
                         }
+            
                     }
                 }
             } catch (Error e){
                 lg.addGame(line);
             }
+
         }
     }
 
@@ -70,6 +75,7 @@ public class GameService {
         }
         return gamesFilter;
     }
+
     
     public static ArrayList<Game> sortConsole(Platform plat){
         ArrayList<Game> games = lg.getGames();
@@ -82,4 +88,17 @@ public class GameService {
         }
         return gamesFilter;
     }
+    
+    public static ArrayList<Game> sortPublisher(Publisher pub){
+        ArrayList<Game> games = lg.getGames();
+        ArrayList<Game> gamesFilter = new ArrayList<>();
+
+        for (int i = 0; i < games.size(); i++) {
+            if (games.get(i).getPub().getName().equalsIgnoreCase(pub.getName())){
+                gamesFilter.add(games.get(i));
+            }
+        }
+        return gamesFilter;
+    }
+
 }

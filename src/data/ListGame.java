@@ -60,6 +60,18 @@ public class ListGame <T>{
 		}
 		return aux;
 	}
+	
+	public ArrayList<Game> getPublishers(){
+		ArrayList<Game> aux = new ArrayList<>();
+		for (int i = 0; i < listGames.size(); i++) {
+			if (listGames.() == new Game().getClass()){
+				aux.add((Game) listGames.get(i));
+			} else {
+				System.out.println(listGames.get(i));
+			}
+		}
+		return aux;
+	}
 
 	@Override
 	public String toString() {
