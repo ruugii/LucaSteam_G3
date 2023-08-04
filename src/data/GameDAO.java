@@ -88,4 +88,8 @@ public class GameDAO {
 	public static ArrayList<Game> sortGen(Genre gen){
 		return GameService.sortGen(gen);
 	}
+	
+	public static ArrayList<Game> sortConsole(Platform plat){
+		return GameService.sortConsole(plat);
+	}
 }
