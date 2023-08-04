@@ -44,6 +44,8 @@ public class Menu {
 						case 1:
 							FilterShowGameList.showList(GameDAO.sortGen(chooseGenre()));
 							break;
+						case 2:
+							FilterShowGameList.showList(GameDAO.sortConsole(choosePlatform()));
 						default:
 							System.out.println("We are working on it");
 					}
@@ -64,26 +66,8 @@ public class Menu {
 	 * 
 	 * MENU CREANDO JUEGO ELIGE  PLATAFORMA
 	 */
-	public static int choosePlatform() {
-		int index = 1;
-		for (Platform platform: Platform.values()) {
-			System.out.println(index + ") " + platform.getName());
-			index++;
-		}
-
-		int button = 0;
-
-		do {
-			button = ReadData.readInt("Selecciona una plataforma: \n");
-
-			if (button < 1 || button > 2) {
-				System.out.println("Introduce un numero valido");
-			}
-
-		} while (button < 1 || button > 3);
-
-		return button;
-
+	public static Platform choosePlatform() {
+		return  CreateObjectGame.elegirPlatform();
 	}
 
 	 /**

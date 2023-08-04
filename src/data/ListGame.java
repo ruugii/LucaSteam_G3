@@ -4,6 +4,7 @@ import model.Game;
 import java.util.List;
 import java.util.ArrayList;
 import model.Game;
+import model.Publisher;
 
 public class ListGame <T>{
 	
@@ -58,8 +59,11 @@ public class ListGame <T>{
 				System.out.println(listGames.get(i));
 			}
 		}
+
 		return aux;
 	}
+
+
 
 	@Override
 	public String toString() {
