@@ -15,6 +15,7 @@ public class ReadData {
             } else {
                 System.out.println("Error, introduce un número entero");
             }
+            input.nextLine();
         } while (!error);
         input.nextLine();
         return number;
@@ -35,6 +36,7 @@ public class ReadData {
             } else {
                 System.out.println("Error, introduce un número entero");
             }
+            input.nextLine();
         } while (!error);
         input.nextLine();
         return number;
