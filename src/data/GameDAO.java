@@ -92,4 +92,12 @@ public class GameDAO {
 	public static ArrayList<Game> sortConsole(Platform plat){
 		return GameService.sortConsole(plat);
 	}
+
+	public static ArrayList<Game> S20(){
+		return GameService.S20();
+	}
+
+	public static ArrayList<Game> pair() {
+		return GameService.pair();
+	}
 }

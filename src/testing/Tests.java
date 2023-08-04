@@ -1,6 +1,5 @@
 package testing;
 
-import data.GameDAO;
 import data.ListGame;
 import model.Genre;
 import model.Platform;
@@ -17,7 +16,7 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestRoger {
+public class Tests {
     private final ListGame lg = new ListGame();
 
     @Test
@@ -117,7 +116,7 @@ public class TestRoger {
     void isAnArrayFilterGenre() {
         GameService.InicialData(DocumentRead.InicialData("src/resources/files/data.csv"));
         Genre[] GeP = {Genre.PLATFORM, Genre.SPORTS, Genre.RACING, Genre.SHOOTER, Genre.MISC, Genre.ACTION, Genre.ROLEPLAYING, Genre.PUZZLE, Genre.FIGHTING, Genre.STRATEGY, Genre.ADVENTURE, Genre.SIMULATION, Genre.DONT_EXIST};
-        Genre gen = GeP[MathOperation.getRandomNumber(0, GeP.length)];
+        Genre gen = GeP[MathOperation.getRandomNumber(0, GeP.length - 1)];
         assertEquals(GameService.sortGen(gen).getClass(), new ArrayList<>().getClass());
     }
 
@@ -158,7 +157,7 @@ public class TestRoger {
                 Platform.GC,
                 Platform.DONT_EXIST
         };
-        Platform gen = p[MathOperation.getRandomNumber(0, p.length)];
+        Platform gen = p[MathOperation.getRandomNumber(0, p.length - 1)];
         assertEquals(GameService.sortConsole(gen).getClass(), new ArrayList<>().getClass());
     }
 
@@ -174,6 +173,18 @@ public class TestRoger {
         Game game1 = CreateObjectGame.createGame("Draco", Platform.XB, 2002, Genre.ACTION, new Publisher("bethesda"));
         Game game2 = new Game("Draco", Platform.XB, 2002, Genre.ACTION, new Publisher("bethesda"));
         assertEquals(game1.getValue(), game2.getValue());
+    }
+
+    @Test
+    void isPair() {
+        GameService.InicialData(DocumentRead.InicialData("src/resources/files/data.csv"));
+        assertEquals(GameService.pair().get(MathOperation.getRandomNumber(1, GameService.pair().size())).getYear() % 2, 2 % 2);
+    }
+
+    @Test
+    void s20() {
+        GameService.InicialData(DocumentRead.InicialData("src/resources/files/data.csv"));
+        assertEquals(GameService.S20().get(MathOperation.getRandomNumber(1, GameService.S20().size())).getYear() < 2000, 1990 < 2000);
     }
 }
 

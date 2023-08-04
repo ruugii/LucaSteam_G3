@@ -105,8 +105,31 @@ public class GameService <T>{
         return gamesFilter;
     }
     
-    public static ArrayList<Publisher> getPublisher(){
+    public static ArrayList<String> getPublisher(){
     	return lg.getPublishers();
     }
 
+    public static ArrayList<Game> S20() {
+        ArrayList<Game> ret = new ArrayList<>();
+        ArrayList<Game> games = lg.getGames();
+
+        for (int i = 0; i < games.size(); i++) {
+            if (games.get(i).getYear() < 2000){
+                ret.add(games.get(i));
+            }
+        }
+        return  ret;
+    }
+
+    public static ArrayList<Game> pair() {
+        ArrayList<Game> ret = new ArrayList<>();
+        ArrayList<Game> games = lg.getGames();
+
+        for (int i = 0; i < games.size(); i++) {
+            if (games.get(i).getYear() % 2 == 0){
+                ret.add(games.get(i));
+            }
+        }
+        return  ret;
+    }
 }

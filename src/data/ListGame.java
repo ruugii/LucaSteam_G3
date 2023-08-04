@@ -1,8 +1,8 @@
 package data;
 import model.Game;
 
-import java.util.List;
-import java.util.ArrayList;
+import java.util.*;
+
 import model.Game;
 import model.Publisher;
 
@@ -55,21 +55,26 @@ public class ListGame <T>{
 		for (int i = 0; i < listGames.size(); i++) {
 			if (listGames.get(i).getClass() == new Game().getClass()){
 				aux.add((Game) listGames.get(i));
-			} else {
-				System.out.println(listGames.get(i));
 			}
 		}
 
 		return aux;
 	}
 	
-	public ArrayList<Publisher> getPublishers(){
-		ArrayList<Publisher> aux = new ArrayList<>();
+	public ArrayList<String> getPublishers(){
+		HashSet<String> a = new HashSet<>();
 		for (int i = 0; i < listGames.size(); i++) {
 			if (listGames.get(i).getClass() == Publisher.class){
-				aux.add((Publisher) listGames.get(i));
+				Publisher pb = (Publisher) listGames.get(i);
+				if (!pb.getName().equalsIgnoreCase("n/a") && !pb.getName().equalsIgnoreCase("Unknown")){
+					Publisher pub = (Publisher) listGames.get(i);
+					a.add(pub.getName());
+				}
 			}
 		}
+		ArrayList<String> aux = new ArrayList<>(a);
+		Collections.sort(aux);
+
 		return aux;
 	}
 
