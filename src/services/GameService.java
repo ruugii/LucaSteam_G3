@@ -9,7 +9,7 @@ import model.Publisher;
 
 import java.util.ArrayList;
 
-public class GameService {
+public class GameService <T>{
 
     static ListGame lg = new ListGame();
     public static void InicialData(ArrayList<String> option) {
@@ -61,6 +61,10 @@ public class GameService {
         return write;
     }
     public static void add(Game g){
+        lg.addGame(g);
+    }
+
+    public static void add(Publisher g){
         lg.addGame(g);
     }
 

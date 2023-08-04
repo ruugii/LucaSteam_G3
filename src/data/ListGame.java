@@ -63,16 +63,24 @@ public class ListGame <T>{
 		return aux;
 	}
 	
-	public ArrayList<Game> getPublishers(){
-		ArrayList<Game> aux = new ArrayList<>();
+	public ArrayList<Publisher> getPublishers(){
+		ArrayList<Publisher> aux = new ArrayList<>();
 		for (int i = 0; i < listGames.size(); i++) {
-			if (listGames.() == new Game().getClass()){
-				aux.add((Game) listGames.get(i));
-			} else {
-				System.out.println(listGames.get(i));
+			if (listGames.get(i).getClass() == Publisher.class){
+				aux.add((Publisher) listGames.get(i));
 			}
 		}
 		return aux;
+	}
+
+	public boolean exists(T t){
+		for (int i = 0; i < listGames.size(); i++) {
+			if (listGames.get(i) == t){
+				return true;
+			}
+		}
+		listGames.add(t);
+		return false;
 	}
 
 
