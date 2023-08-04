@@ -8,6 +8,7 @@ import model.Game;
 import model.Publisher;
 
 import org.junit.jupiter.api.Test;
+import services.GameService;
 import utilities.DocumentRead;
 import utilities.MathOperation;
 
@@ -17,12 +18,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestRoger {
     private final ListGame lg = new ListGame();
-
-	@Test
-    void lengthData () {
-        ArrayList<String> iData = DocumentRead.InicialData("src/resources/files/data.csv");
-        assertEquals(iData.size(), 16598);
-    }
 
     @Test
     void WriteData() {
@@ -52,6 +47,21 @@ public class TestRoger {
     	Game g = new Game("Sonic",Platform.GB,2012,Genre.ADVENTURE,new Publisher("One"));
     	lg.addGame(g);
     	assertEquals(lg.getListGames().size(),length + 1);
+    }
+
+    @Test
+    void correctFilter(){
+        GameService.InicialData(DocumentRead.InicialData("src/resources/files/data.csv"));
+        Genre [] GeP = { Genre.PLATFORM, Genre.SPORTS, Genre.RACING, Genre.SHOOTER, Genre.MISC, Genre.ACTION, Genre.ROLEPLAYING, Genre.PUZZLE, Genre.FIGHTING, Genre.STRATEGY, Genre.ADVENTURE, Genre.SIMULATION, Genre.DONT_EXIST};
+        Genre gen = GeP[MathOperation.getRandomNumber(0, GeP.length)];
+        assertEquals(
+                GameService.sortGen(gen).get(
+                        MathOperation.getRandomNumber(
+                                0, GameService.sortGen(gen).size()
+                        )
+                ).getGen(), gen
+        );
+
     }
     
 }
