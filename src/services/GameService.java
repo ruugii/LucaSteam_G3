@@ -114,7 +114,7 @@ public class GameService <T>{
         ArrayList<Game> games = lg.getGames();
 
         for (int i = 0; i < games.size(); i++) {
-            if (games.get(i).getYear() < 2000){
+            if (games.get(i).getYear() < 2000 && games.get(i).getYear() > 1900){
                 ret.add(games.get(i));
             }
         }

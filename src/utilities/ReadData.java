@@ -17,7 +17,6 @@ public class ReadData {
             }
             input.nextLine();
         } while (!error);
-        input.nextLine();
         return number;
     }
 
@@ -38,7 +37,6 @@ public class ReadData {
             }
             input.nextLine();
         } while (!error);
-        input.nextLine();
         return number;
     }
 
