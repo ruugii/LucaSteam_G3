@@ -42,7 +42,7 @@ public class Menu {
 					int btn_2 = ReadData.readInt(menu_2, 1, option_2.length);
 					switch (btn_2){
 						case 1:
-							FilterShowGameList.showGames(GameService.showGameList(), chooseGenre());
+							FilterShowGameList.showList(GameDAO.sortGen(chooseGenre()));
 							break;
 						default:
 							System.out.println("We are working on it");
@@ -85,8 +85,8 @@ public class Menu {
 		return button;
 
 	}
-	
-	/**
+
+	 /**
 	 * 
 	 * ELIGE COMO FILTRAR
 	 * */

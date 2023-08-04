@@ -11,12 +11,4 @@ public class LucaSteam_G3 {
         GameService.InicialData(DocumentRead.InicialData("src/resources/files/data.csv"));
         Menu.showMenu();
     }
-
-    private static void ShowGames(){
-        FilterShowGameList.showList(GameService.showGameList());
-    }
-
-    private static void ShowGamesByGen(){
-        FilterShowGameList.showGames(GameService.showGameList(), Genre.ACTION);
-    }
 }

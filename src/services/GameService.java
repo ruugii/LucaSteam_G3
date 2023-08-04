@@ -2,10 +2,6 @@ package services;
 import data.ListGame;
 import model.Game;
 import model.Genre;
-import model.Platform;
-import model.Publisher;
-import utilities.DocumentRead;
-import utilities.ReadData;
 
 import java.util.ArrayList;
 
@@ -14,6 +10,7 @@ public class GameService {
     static ListGame lg = new ListGame();
     public static void InicialData(ArrayList<String> option) {
         for (String line : option) {
+            System.out.println(line);
             String[] hasComilllas = line.split("\"");
             String[] separateComa = line.split(",");
             try {
@@ -57,8 +54,19 @@ public class GameService {
         }
         return write;
     }
-
     public static void add(Game g){
         lg.addGame(g);
+    }
+
+    public static ArrayList<Game> sortGen(Genre gen){
+        ArrayList<Game> games = lg.getGames();
+        ArrayList<Game> gamesFilter = new ArrayList<>();
+
+        for (int i = 0; i < games.size(); i++) {
+            if (games.get(i).getGen().getName().equalsIgnoreCase(gen.getName())){
+                gamesFilter.add(games.get(i));
+            }
+        }
+        return gamesFilter;
     }
 }

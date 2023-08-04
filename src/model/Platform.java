@@ -11,13 +11,16 @@ public enum Platform {
 	 */
 	
 	PS("PS"),
+	GEN("GEN"),
 	DS("DS"),
 	WII("WII"),
 	X360("X360"),
 	XB("XB"),
 	PC("PC"),
 	PSV("PSV"),
+	SCD("SCD"),
 	_3DS("3DS"),
+	_3DO("3DO"),
 	_2600("2600"),
 	N64("N64"),
 	PS2("PS2"),
@@ -25,6 +28,7 @@ public enum Platform {
 	PS3("PS3"),
 	SAT("SAT"),
 	GB("GB"),
+	GG("GG"),
 	GBA("GBA"),
 	SNES("SNES"),
 	NES("NES"),
@@ -32,7 +36,11 @@ public enum Platform {
 	PS4("PS4"),
 	XONE("XONE"),
 	WIIU("WIIU"),
+	WS("WS"),
+	NG("NG"),
+	PCFX("PCFX"),
 	_TG16("TG16"),
+	GC("GC"),
 	DONT_EXIST("DONT_EXIST");
 	
 	String string;

@@ -1,5 +1,6 @@
 package testing;
 
+import data.GameDAO;
 import data.ListGame;
 import model.Genre;
 import model.Platform;
@@ -8,6 +9,7 @@ import model.Publisher;
 
 import org.junit.jupiter.api.Test;
 import utilities.DocumentRead;
+import utilities.MathOperation;
 
 import java.util.ArrayList;
 
@@ -51,7 +53,5 @@ public class TestRoger {
     	lg.addGame(g);
     	assertEquals(lg.getListGames().size(),length + 1);
     }
-    
-    
     
 }
