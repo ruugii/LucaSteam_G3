@@ -104,5 +104,9 @@ public class GameService <T>{
         }
         return gamesFilter;
     }
+    
+    public static ArrayList<Publisher> getPublisher(){
+    	return lg.getPublishers();
+    }
 
 }

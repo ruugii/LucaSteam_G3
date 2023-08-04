@@ -16,7 +16,7 @@ public class Menu {
 	 * SOLO MUESTRA MENU
 	 */
 	public static void showMenu() {
-		String[] option = {"Agregar un nuevo juego", "Mostrar lista de juegos", "Muestrame los juegos filtrados por...", "Salir"};
+		String[] option = {"Agregar un nuevo juego", "Mostrar lista de juegos", "Muestrame los juegos filtrados por...","Muestrame los editores.", "Salir"};
 		String menu = "Elige la opcion que desees: \n\t";
 
 		for (int i = 0; i < option.length; i++) {
@@ -49,6 +49,12 @@ public class Menu {
 						default:
 							System.out.println("We are working on it");
 					}
+					break;
+				case 4:
+					FilterShowPublisherList.showPublishers(GameService.getPublisher());
+					break;
+					
+					
 			}
 		} while (button != option.length);
 		DocumentRead.SaveData("src/resources/files/data.csv", GameService.getDocumentFormat());
