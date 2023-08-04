@@ -83,7 +83,6 @@ public class GameDAO {
 
 		return CreateObjectGame.createGame(ReadData.readString("Introduce el nombre:"), pl, ReadData.readInt("Introduce el año:"), ge, ReadData.readString("Introduce el publisher:"));
 
-
 	}
 
 	public static ArrayList<Game> sortGen(Genre gen){
